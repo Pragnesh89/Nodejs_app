@@ -248,7 +248,7 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git branch: 'main', url: 'https://github.com/MatheusIshiyama/BravanzinBot.git'
+                git branch: 'main', url: 'https://github.com/Pragnesh89/Nodejs_app.git'
             }
         }
     
@@ -270,7 +270,6 @@ pipeline {
 
 Then save it
 
-![Pipeline script](.github/jenkins/pipeline-script.png)
 
 and click `Build Now`.
 
