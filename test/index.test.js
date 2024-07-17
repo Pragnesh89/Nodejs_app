@@ -12,7 +12,7 @@
             });
             expect(res.statusCode).to.equal(200);
             expect(res.body).to.have.property('name').that.equals('Learn SonarQube code coverage');
-            expect(res.body).to.have.property('status').that.equals('true');
+            expect(res.body).to.have.property('status').that.equals(true);
         })
     })
     afterEach(async () => {
