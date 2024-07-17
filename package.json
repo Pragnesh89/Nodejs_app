@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results.xml"
   },
   "author": "",
   "license": "ISC",
