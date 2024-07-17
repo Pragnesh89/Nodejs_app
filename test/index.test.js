@@ -1,5 +1,6 @@
     const request =  require('supertest')
     const server =  require('../src/index')
+    var expect = chai.expect;
     const app = request(server)
     describe('Get Endpoints', () => {
         it('Get', async () => {
