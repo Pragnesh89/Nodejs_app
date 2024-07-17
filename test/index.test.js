@@ -16,6 +16,6 @@ describe(`test endpoints`, () => {
   test(`Call entrypoint`, async () => {
     const res = await request(app).get("/");
     expect(res.status).toBe(200)
-    expect(res.text).toBe('This app is running properly')
+    expect(res.text).toBe('Hello World!')
   });
 });
