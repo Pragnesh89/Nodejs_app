@@ -11,8 +11,8 @@
                 name:  'test ran successfully',
             });
             expect(res.statusCode).to.equal(200);
-            expect(res.body).toHaveProperty('name');
-            expect(res.body).toHaveProperty('status');
+            expect(res.body).to.HaveProperty('name');
+            expect(res.body).to.HaveProperty('status');
         })
     })
     afterEach(async () => {
