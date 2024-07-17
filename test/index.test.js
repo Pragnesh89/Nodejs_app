@@ -1,18 +1,18 @@
-    const request =  require('supertest')
-    const server =  require('../src/index')
-    const app = request(server)
-    describe('Get Endpoints', () => {
-        it('Get', async () => {
-            const res =  await app
-            .get('/')
-            .send({
-                name:  'test ran successfully',
-            });
-            expect(res.statusCode).toEqual(200);
-            expect(res.body).toHaveProperty('name');
-            expect(res.body).toHaveProperty('status');
-        })
-    })
-    afterEach(async () => {
-        server.close();
-    });
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = require('../index');
+
+const expect = chai.expect;
+chai.use(chaiHttp);
+
+describe('GET /', () => {
+  it('should return Hello World!', (done) => {
+    chai.request(server)
+        .get('/')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.text).to.equal('Hello World!');
+          done();
+        });
+  });
+});
