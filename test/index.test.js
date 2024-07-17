@@ -10,7 +10,7 @@
             .send({
                 name:  'test ran successfully',
             });
-            expect(res.statusCode).to.eventually.equal(200);
+            expect(res.statusCode).to.equal(200);
             expect(res.body).toHaveProperty('name');
             expect(res.body).toHaveProperty('status');
         })
