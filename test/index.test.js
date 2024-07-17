@@ -1,21 +1,18 @@
-// // require functions on user
-const request = require("supertest");
-const mongoose = require('mongoose');
-const app = require('../../src/index');
-
-describe(`test endpoints`, () => {    
-
-  beforeEach(async () => {
-    await mongoose.connect(process.env.MONGURI);
-  });
-
-  afterEach(async () => {
-    await mongoose.connection.close();
-  });
-  
-  test(`Call entrypoint`, async () => {
-    const res = await request(app).get("/");
-    expect(res.status).toBe(200)
-    expect(res.text).toBe('This app is running properly')
-  });
-});
+    const request =  require('supertest')
+    const server =  require('../server')
+    const app = request(server)
+    describe('Get Endpoints', () => {
+        it('Get', async () => {
+            const res =  await app
+            .get('/')
+            .send({
+                name:  'test ran successfully',
+            });
+            expect(res.statusCode).toEqual(200);
+            expect(res.body).toHaveProperty('name');
+            expect(res.body).toHaveProperty('status');
+        })
+    })
+    afterAll(async () => {
+        server.close();
+    });
