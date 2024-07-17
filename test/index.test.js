@@ -13,6 +13,6 @@
             expect(res.body).toHaveProperty('status');
         })
     })
-    afterAll(async () => {
+    afterEach(async () => {
         server.close();
     });
