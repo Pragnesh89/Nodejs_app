@@ -1,5 +1,5 @@
     const request =  require('supertest')
-    const server =  require('../src/server')
+    const server =  require('../src/index')
     const app = request(server)
     describe('Get Endpoints', () => {
         it('Get', async () => {
